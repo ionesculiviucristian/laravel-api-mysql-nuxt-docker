@@ -1,4 +1,6 @@
-# Installation
+# Laravel API, MySQL and Nuxt in Docker
+
+## Installation
 
 ---
 
@@ -6,17 +8,17 @@
 git clone https://github.com/ionesculiviucristian/laravel-api-mysql-nuxt-docker
 ```
 
-# Laravel and Nuxt setup
+## Laravel and Nuxt setup
 
 ---
 
-## Laravel
+### Laravel
 
 ```bash
 composer create-project laravel/laravel api
 ```
 
-## Nuxt
+### Nuxt
 
 You can customize the answers config with your own requirements:
 
@@ -43,7 +45,7 @@ cd app
 npm run build
 ```
 
-## Register virtual hosts
+### Register virtual hosts
 
 ```bash
 sudo nano /etc/hosts
@@ -51,7 +53,7 @@ sudo nano /etc/hosts
 127.0.0.1 app.com
 ```
 
-## Generate certificates
+### Generate certificates
 
 ```bash
 cd ../docker/dev/build/nginx-proxy/certs
@@ -77,7 +79,7 @@ EOF
 openssl x509 -req -in app.com.csr -CA appCA.pem -CAkey appCA.key -CAcreateserial -out app.com.crt -days 825 -sha256 -extfile app.com.ext
 ```
 
-## Running Docker
+### Running Docker
 
 ```bash
 cd ../../../../../
@@ -87,10 +89,10 @@ mkdir -p volumes/mysql
 dc up -d
 ```
 
-# Extra
+## Extra
 
 ---
 
-## XDebug
+### XDebug
 
 https://www.jetbrains.com/help/phpstorm/2020.3/browser-debugging-extensions.html
