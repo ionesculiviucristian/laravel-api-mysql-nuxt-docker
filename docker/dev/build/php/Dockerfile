@@ -4,6 +4,8 @@ RUN apk update && apk upgrade
 
 RUN apk add autoconf g++ make
 
+RUN docker-php-ext-install mysqli pdo_mysql
+
 RUN pecl install xdebug
 
 RUN echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \

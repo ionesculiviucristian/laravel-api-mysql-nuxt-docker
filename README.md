@@ -80,8 +80,6 @@ openssl x509 -req -in app.com.csr -CA appCA.pem -CAkey appCA.key -CAcreateserial
 ```bash
 cd ../../../../../
 
-mkdir -p volumes/mysql
-
 dc up -d
 ```
 

@@ -2,7 +2,7 @@
 /.idea
 /api
 /app
+/db
 /docker/dev/build/mysql/.env
 /docker/dev/build/nginx/.env
 /docker/dev/build/node/.env
-/volumes
