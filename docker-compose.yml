@@ -3,20 +3,18 @@ version: '3.7'
 services:
   nginx-proxy:
     image: jwilder/nginx-proxy
+    restart: always
     ports:
       - 80:80
       - 443:443
-    env_file:
-      - ./docker/dev/build/nginx-proxy/.env
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./docker/dev/build/nginx-proxy/certs/app.com.crt:/etc/nginx/certs/app.com.crt
       - ./docker/dev/build/nginx-proxy/certs/app.com.key:/etc/nginx/certs/app.com.key
 
   nginx:
-    build:
-      context: .
-      dockerfile: docker/dev/build/nginx/Dockerfile
+    image: nginx:1.19-alpine
+    restart: always
     env_file:
       - ./docker/dev/build/nginx/.env
     volumes:
@@ -24,11 +22,12 @@ services:
       - ${APP_API_PUBLIC_PATH}:/api/public
 
   php:
+    restart: always
     build:
       context: .
       dockerfile: docker/dev/build/php/Dockerfile
-    env_file:
-      - ./docker/dev/build/php/.env
+    expose:
+      - 9000
     volumes:
       - ${APP_API_PATH}:/api
 
