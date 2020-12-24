@@ -2,15 +2,11 @@
 
 ## Installation
 
----
-
 ```bash
 git clone https://github.com/ionesculiviucristian/laravel-api-mysql-nuxt-docker
 ```
 
 ## Laravel and Nuxt setup
-
----
 
 ### Laravel
 
@@ -90,8 +86,6 @@ dc up -d
 ```
 
 ## Extra
-
----
 
 ### XDebug
 
