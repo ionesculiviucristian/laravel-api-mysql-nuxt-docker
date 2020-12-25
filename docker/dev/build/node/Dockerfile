@@ -4,7 +4,9 @@ RUN apk update && apk upgrade
 
 RUN mkdir /app
 
-COPY /app /app
+ARG APP_PATH
+
+COPY ${APP_PATH} /app
 
 WORKDIR /app
 
