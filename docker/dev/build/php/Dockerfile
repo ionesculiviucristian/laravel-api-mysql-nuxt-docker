@@ -4,7 +4,7 @@ RUN apk update && apk upgrade
 
 RUN apk add autoconf g++ make
 
-RUN docker-php-ext-install mysqli pdo_mysql
+RUN docker-php-ext-install mysqli pdo_mysql exif
 
 RUN pecl install xdebug
 
