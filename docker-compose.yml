@@ -47,12 +47,12 @@ services:
     build:
       context: .
       dockerfile: docker/dev/build/node/Dockerfile
-      args:
-        - APP_PATH:${APP_PATH}
     expose:
       - 3000
     env_file:
       - ./docker/dev/build/node/.env
+    volumes:
+      - ${APP_PATH}:/app
 
 volumes:
   db:
