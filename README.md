@@ -80,6 +80,8 @@ openssl x509 -req -in app.com.csr -CA appCA.pem -CAkey appCA.key -CAcreateserial
 ```bash
 cd ../../../../../
 
+docker stop $(docker ps -a -q)
+
 dc up -d
 ```
 
