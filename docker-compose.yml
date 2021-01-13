@@ -9,8 +9,8 @@ services:
       - 443:443
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /usr/local/share/ca-certificates/app.com.crt:/etc/nginx/certs/app.com.crt
-      - /usr/local/share/ca-certificates/app.com.key:/etc/nginx/certs/app.com.key
+      - ./ca-certificates/app.com.crt:/etc/nginx/certs/app.com.crt
+      - ./ca-certificates/app.com.key:/etc/nginx/certs/app.com.key
 
   nginx:
     image: nginx:1.19-alpine

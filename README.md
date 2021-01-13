@@ -53,7 +53,7 @@ sudo nano /etc/hosts
 
 ```bash
 cd scripts
-sudo ./generate_ca_certificates.sh
+./generate_ca_certificates.sh
 ```
 
 ### Running Docker
