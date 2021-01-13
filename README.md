@@ -45,6 +45,11 @@ npm run build
 
 ```bash
 sudo nano /etc/hosts
+```
+
+Then add the following:
+
+```
 127.0.0.1 api.app.com
 127.0.0.1 app.com
 ```
@@ -56,6 +61,8 @@ cd scripts
 ./generate_ca_certificates.sh
 ```
 
+Then import appCA.pem in Chrome from chrome://settings/certificates under Authorities
+
 ### Running Docker
 
 ```bash
@@ -63,7 +70,7 @@ cd ..
 
 docker stop $(docker ps -a -q)
 
-dc up -d
+docker-compose up -d
 ```
 
 ## Extra
